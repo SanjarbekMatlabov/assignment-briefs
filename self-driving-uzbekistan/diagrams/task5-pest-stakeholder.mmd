@@ -1,0 +1,48 @@
+%% Task 5 - Supporting diagram: stakeholder + cause-effect map for
+%% self-driving technology in Uzbekistan (Brief Task 5 / Appendix E).
+%% Render at https://mermaid.live and export into the report.
+
+flowchart LR
+
+    subgraph DRIVERS["Drivers (causes)"]
+        direction TB
+        SAFETY["High road deaths<br/>2,203 in 2024"]
+        STRATEGY["AI Strategy 2030<br/>(PP-358)"]
+        EVLOCAL["Local EV making<br/>(BYD-UzAuto)"]
+        CITY["New Tashkent<br/>smart city + ITS"]
+    end
+
+    TECH(("Self-Driving<br/>Technology<br/>in Uzbekistan")):::core
+
+    subgraph STAKEHOLDERS["Key stakeholders"]
+        direction TB
+        GOV["Government &<br/>regulators"]
+        FIRMS["Carmakers &<br/>tech firms"]
+        DRIVERSPEOPLE["Professional<br/>drivers"]
+        PUBLIC["Public &<br/>passengers"]
+    end
+
+    subgraph EFFECTS["Effects (consequences)"]
+        direction TB
+        SAFER["Fewer accidents<br/>(benefit)"]
+        JOBS["Driver job loss<br/>(risk)"]
+        PRIVACY["Data & privacy<br/>concerns (risk)"]
+        ECON["New IT / mobility<br/>jobs (benefit)"]
+    end
+
+    SAFETY --> TECH
+    STRATEGY --> TECH
+    EVLOCAL --> TECH
+    CITY --> TECH
+
+    GOV --> |regulates / funds| TECH
+    FIRMS --> |build & sell| TECH
+    TECH --> |affects| DRIVERSPEOPLE
+    TECH --> |serves| PUBLIC
+
+    TECH --> SAFER
+    TECH --> JOBS
+    TECH --> PRIVACY
+    TECH --> ECON
+
+    classDef core fill:#ffe5b4,stroke:#fd7e14,color:#000,font-weight:bold;

@@ -1,0 +1,14 @@
+Category,Factor,Type,Weight_A,Strength_B,Score_AxB,Sign,Comment
+Political,Government AI Development Strategy 2030 (PP-358) supports AI/mobility,Opportunity,0.15,4.7,0.705,Positive,Key state driver of demand and funding for AI and smart mobility
+Political,No road-traffic law for autonomous driving / unclear crash liability,Threat,0.12,4.3,0.516,Negative,Legal gap can block public-road deployment
+Political,AI Amendments Law ZRU-1115 (first legal definition / data rules),Opportunity,0.06,3.0,0.18,Positive,Creates legal foundation but adds compliance duties
+Economic,BYD-UzAuto local EV manufacturing in Jizzakh,Opportunity,0.10,3.7,0.37,Positive,Local production lowers cost and brings ADAS-ready cars
+Economic,High sensor/compute cost vs low average purchasing power,Threat,0.14,4.5,0.63,Negative,Biggest economic barrier to mass adoption
+Economic,Foreign investment and New Tashkent smart-city spending,Opportunity,0.07,3.3,0.231,Positive,Funds infrastructure that autonomy needs
+Social,High road-accident and death rate creates demand for safety,Opportunity,0.13,4.3,0.559,Positive,2203 deaths in 2024 motivate safer automated transport
+Social,Public distrust and loss of driver jobs (taxi/bus/lorry),Threat,0.08,3.7,0.296,Negative,Social resistance and employment risk
+Social,Young urban population already using ride-hailing (Yandex/Uklon),Opportunity,0.05,3.0,0.15,Positive,Fast digital adoption eases future acceptance
+Technological,5G rollout and Tashkent Intelligent Transport System,Opportunity,0.04,3.3,0.132,Positive,Enables V2X and connected-vehicle data
+Technological,Limited HD maps and poor road markings outside big cities,Threat,0.04,3.7,0.148,Negative,Restricts where automation can work safely
+Technological,EV platform and national charging-network growth,Opportunity,0.02,2.7,0.054,Positive,Supports electric autonomous fleets
+TOTAL,,,1.00,,3.971,,Higher total = stronger external pressure on the technology
