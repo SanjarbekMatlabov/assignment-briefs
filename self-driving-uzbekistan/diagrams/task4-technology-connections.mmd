@@ -1,0 +1,93 @@
+%% Task 4 - Technology Interconnection Diagram for Self-Driving Technology
+%% Unit 21: Emerging Technologies. Brief Appendix D.
+%% 24 technology blocks, 4 maturity categories (color-coded), 4 connection types.
+%%
+%% Connection types (edge labels):
+%%   - "needs"      = dependency      (solid arrow  -->)
+%%   - "combines"   = combination     (open link    ---)
+%%   - "improves"   = enhancement     (dotted arrow -.->)
+%%   - "replaces"   = disruption      (thick arrow  ==>)
+%%
+%% Maturity colors (see classDef at bottom):
+%%   obsolete = grey | mature = blue | emerging = green | future = orange
+%%
+%% Render online at https://mermaid.live then export PNG/SVG into the report.
+
+flowchart TB
+
+    %% ===== CENTRAL TECHNOLOGY =====
+    SDC["Self-Driving Vehicle System (SAE L0-L5)"]:::emerging
+
+    %% ===== HARDWARE / SENSING =====
+    LIDAR["LiDAR sensors"]:::emerging
+    RADAR["Radar sensors"]:::mature
+    CAM["Cameras / Computer Vision"]:::mature
+    GPS["GPS / GNSS positioning"]:::mature
+    IMU["IMU / wheel odometry"]:::mature
+    ULTRA["Ultrasonic parking sensors"]:::mature
+
+    %% ===== COMPUTE / DATA =====
+    AICHIP["AI accelerators / GPUs / SoC"]:::emerging
+    EDGE["Edge computing"]:::emerging
+    CLOUD["Cloud computing & data centres"]:::mature
+    BIGDATA["Big data pipelines"]:::mature
+
+    %% ===== SOFTWARE / INTELLIGENCE =====
+    DL["Deep learning / neural networks"]:::emerging
+    SENSORFUSION["Sensor fusion algorithms"]:::emerging
+    SLAM["SLAM & path planning"]:::emerging
+    HDMAP["HD maps"]:::emerging
+    DT["Digital twin / simulation"]:::emerging
+    V2X["V2X connectivity"]:::future
+
+    %% ===== CONNECTIVITY / PLATFORM =====
+    NET5G["5G networks"]:::emerging
+    OTA["OTA software updates"]:::mature
+    CYBER["Automotive cybersecurity"]:::emerging
+    EV["EV / electric drivetrain platform"]:::emerging
+    ITS["Intelligent Transport Systems"]:::emerging
+
+    %% ===== OBSOLETE / REPLACED =====
+    HUMAN["Human-only driving"]:::obsolete
+    PAPERMAP["Paper maps / manual navigation"]:::obsolete
+
+    %% ===== DEPENDENCIES (needs) =====
+    SDC --> |needs| LIDAR
+    SDC --> |needs| RADAR
+    SDC --> |needs| CAM
+    SDC --> |needs| GPS
+    SDC --> |needs| AICHIP
+    SDC --> |needs| DL
+    SDC --> |needs| SENSORFUSION
+    SDC --> |needs| SLAM
+    SDC --> |needs| HDMAP
+    SENSORFUSION --> |needs| IMU
+    SENSORFUSION --> |needs| ULTRA
+    DL --> |needs| BIGDATA
+    DL --> |needs| CLOUD
+    HDMAP --> |needs| GPS
+
+    %% ===== COMBINATIONS (combines) =====
+    SDC --- |combines| EV
+    SDC --- |combines| V2X
+    SDC --- |combines| ITS
+    AICHIP --- |combines| EDGE
+    V2X --- |combines| NET5G
+
+    %% ===== ENHANCEMENTS (improves) =====
+    EDGE -.-> |improves speed| SDC
+    NET5G -.-> |improves data| V2X
+    DT -.-> |improves testing| DL
+    OTA -.-> |improves updates| SDC
+    CYBER -.-> |improves trust| SDC
+    CAM -.-> |improves perception| SENSORFUSION
+
+    %% ===== DISRUPTION (replaces) =====
+    SDC ==> |replaces| HUMAN
+    HDMAP ==> |replaces| PAPERMAP
+
+    %% ===== STYLE =====
+    classDef obsolete fill:#d9d9d9,stroke:#7f7f7f,color:#000;
+    classDef mature   fill:#cfe2ff,stroke:#0d6efd,color:#000;
+    classDef emerging fill:#d1e7dd,stroke:#198754,color:#000;
+    classDef future   fill:#ffe5b4,stroke:#fd7e14,color:#000;
